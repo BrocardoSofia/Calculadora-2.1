@@ -7,7 +7,14 @@
  *
  * @author sofia
  */
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import modelo.Button;
+import modelo.ButtonImage;
 import modelo.Calculator;
+import modelo.CalculatorBackground;
+import modelo.CalculatorButtons;
 public class Calculadora extends javax.swing.JFrame 
 {
 
@@ -18,6 +25,7 @@ public class Calculadora extends javax.swing.JFrame
     public Calculadora() 
     {
         initComponents();
+        setLocationRelativeTo(null);//para que la ventana inicie en el centro de la pantalla
     }
 
     /**
@@ -52,10 +60,10 @@ public class Calculadora extends javax.swing.JFrame
         jPanel2 = new javax.swing.JPanel();
         screenResult = new javax.swing.JLabel();
         screen = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(210, 352));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -71,8 +79,8 @@ public class Calculadora extends javax.swing.JFrame
         AC.setBorder(null);
         AC.setBorderPainted(false);
         AC.setContentAreaFilled(false);
+        AC.setFocusPainted(false);
         AC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        AC.setOpaque(false);
         AC.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1.png"))); // NOI18N
         AC.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1Mouse.png"))); // NOI18N
         AC.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +96,7 @@ public class Calculadora extends javax.swing.JFrame
         pi.setBorder(null);
         pi.setBorderPainted(false);
         pi.setContentAreaFilled(false);
+        pi.setFocusPainted(false);
         pi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pi.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1.png"))); // NOI18N
         pi.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1Mouse.png"))); // NOI18N
@@ -104,6 +113,7 @@ public class Calculadora extends javax.swing.JFrame
         multiply.setBorder(null);
         multiply.setBorderPainted(false);
         multiply.setContentAreaFilled(false);
+        multiply.setFocusPainted(false);
         multiply.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         multiply.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1.png"))); // NOI18N
         multiply.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1Mouse.png"))); // NOI18N
@@ -120,6 +130,7 @@ public class Calculadora extends javax.swing.JFrame
         divide.setBorder(null);
         divide.setBorderPainted(false);
         divide.setContentAreaFilled(false);
+        divide.setFocusPainted(false);
         divide.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         divide.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1.png"))); // NOI18N
         divide.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1Mouse.png"))); // NOI18N
@@ -135,6 +146,7 @@ public class Calculadora extends javax.swing.JFrame
         seven.setText("7");
         seven.setBorderPainted(false);
         seven.setContentAreaFilled(false);
+        seven.setFocusPainted(false);
         seven.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         seven.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         seven.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -150,6 +162,7 @@ public class Calculadora extends javax.swing.JFrame
         eight.setText("8");
         eight.setBorderPainted(false);
         eight.setContentAreaFilled(false);
+        eight.setFocusPainted(false);
         eight.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         eight.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         eight.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -165,6 +178,7 @@ public class Calculadora extends javax.swing.JFrame
         nine.setText("9");
         nine.setBorderPainted(false);
         nine.setContentAreaFilled(false);
+        nine.setFocusPainted(false);
         nine.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         nine.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         nine.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -180,6 +194,7 @@ public class Calculadora extends javax.swing.JFrame
         four.setText("4");
         four.setBorderPainted(false);
         four.setContentAreaFilled(false);
+        four.setFocusPainted(false);
         four.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         four.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         four.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -195,6 +210,7 @@ public class Calculadora extends javax.swing.JFrame
         five.setText("5");
         five.setBorderPainted(false);
         five.setContentAreaFilled(false);
+        five.setFocusPainted(false);
         five.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         five.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         five.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -210,6 +226,7 @@ public class Calculadora extends javax.swing.JFrame
         six.setText("6");
         six.setBorderPainted(false);
         six.setContentAreaFilled(false);
+        six.setFocusPainted(false);
         six.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         six.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         six.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -225,6 +242,7 @@ public class Calculadora extends javax.swing.JFrame
         one.setText("1");
         one.setBorderPainted(false);
         one.setContentAreaFilled(false);
+        one.setFocusPainted(false);
         one.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         one.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         one.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -240,6 +258,7 @@ public class Calculadora extends javax.swing.JFrame
         two.setText("2");
         two.setBorderPainted(false);
         two.setContentAreaFilled(false);
+        two.setFocusPainted(false);
         two.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         two.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         two.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -255,6 +274,7 @@ public class Calculadora extends javax.swing.JFrame
         three.setText("3");
         three.setBorderPainted(false);
         three.setContentAreaFilled(false);
+        three.setFocusPainted(false);
         three.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         three.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         three.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -270,6 +290,7 @@ public class Calculadora extends javax.swing.JFrame
         cero.setText("0");
         cero.setBorderPainted(false);
         cero.setContentAreaFilled(false);
+        cero.setFocusPainted(false);
         cero.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         cero.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         cero.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -285,6 +306,7 @@ public class Calculadora extends javax.swing.JFrame
         dot.setText(".");
         dot.setBorderPainted(false);
         dot.setContentAreaFilled(false);
+        dot.setFocusPainted(false);
         dot.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         dot.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         dot.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -300,6 +322,7 @@ public class Calculadora extends javax.swing.JFrame
         DEL.setText("del");
         DEL.setBorderPainted(false);
         DEL.setContentAreaFilled(false);
+        DEL.setFocusPainted(false);
         DEL.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         DEL.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3.png"))); // NOI18N
         DEL.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton3Mouse.png"))); // NOI18N
@@ -310,12 +333,13 @@ public class Calculadora extends javax.swing.JFrame
         });
 
         equal.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        equal.setForeground(new java.awt.Color(51, 51, 51));
+        equal.setForeground(new java.awt.Color(102, 102, 102));
         equal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton2.png"))); // NOI18N
         equal.setText("=");
         equal.setBorder(null);
         equal.setBorderPainted(false);
         equal.setContentAreaFilled(false);
+        equal.setFocusPainted(false);
         equal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         equal.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton2.png"))); // NOI18N
         equal.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton2Mouse.png"))); // NOI18N
@@ -332,6 +356,7 @@ public class Calculadora extends javax.swing.JFrame
         substract.setBorder(null);
         substract.setBorderPainted(false);
         substract.setContentAreaFilled(false);
+        substract.setFocusPainted(false);
         substract.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         substract.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1.png"))); // NOI18N
         substract.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1Mouse.png"))); // NOI18N
@@ -348,6 +373,7 @@ public class Calculadora extends javax.swing.JFrame
         add.setBorder(null);
         add.setBorderPainted(false);
         add.setContentAreaFilled(false);
+        add.setFocusPainted(false);
         add.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1.png"))); // NOI18N
         add.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton1Mouse.png"))); // NOI18N
@@ -453,11 +479,19 @@ public class Calculadora extends javax.swing.JFrame
         screenResult.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         screenResult.setForeground(new java.awt.Color(102, 102, 102));
         screenResult.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        screenResult.setText("20+10");
 
         screen.setBackground(new java.awt.Color(255, 255, 255));
         screen.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         screen.setForeground(new java.awt.Color(51, 51, 51));
         screen.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        screen.setText("30");
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -469,14 +503,20 @@ public class Calculadora extends javax.swing.JFrame
                     .addComponent(screenResult, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
                     .addComponent(screen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(screenResult, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(screen, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addComponent(screen)
                 .addContainerGap())
         );
 
@@ -484,8 +524,8 @@ public class Calculadora extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -511,11 +551,9 @@ public class Calculadora extends javax.swing.JFrame
             calculadora.setNum2(num2);//seteo el numero 2
         }
 
-        //agrego a la pantalla de arriba el numero 2 y un igual
-        this.screenResult.setText(this.screenResult.getText() + num2 + " = ");
-
+        
         num2 = calculadora.calculate();//almaceno en num2 el resultado
-        this.screen.setText(num2);//borro lo anterior de la pantalla de abajo y muestro el resultado
+        
 
         deleteOperationScreen = true; //levanto la bandera de borrar la operacion en pantalla
         operation = ' '; //reinicio la variable que almacena la operacion en espacio
@@ -523,11 +561,20 @@ public class Calculadora extends javax.swing.JFrame
         if(calculadora.getError()) //verifico que el calculo no fue un error
         {
             //si hay un error
+            this.screenResult.setText(num2);
+            this.screen.setText(" ");
+            
             calculadora.resetAtributs(); //reseteo los atributos de la calculadora
             num1 = "";//reseteo el numero 1
         }
         else
-        num1 = num2; //si no hay error almaceno en num 1 el resultado
+        {
+            //agrego a la pantalla de arriba el numero 2 y un igual
+            this.screenResult.setText(this.screenResult.getText() + num2 + " = ");
+            this.screen.setText(num2);//borro lo anterior de la pantalla de abajo y muestro el resultado
+            num1 = num2; //si no hay error almaceno en num 1 el resultado  
+        }
+        
         num2 = ""; //num2 siempre se resetea
         pressEqual = true;//guardo que se presiono la tecla igual
         //esto me sirve en dos ocasiones :
@@ -657,6 +704,64 @@ public class Calculadora extends javax.swing.JFrame
         calculadora.resetAtributs(); //reseteo la calculadora
         resetValues(); //reseteo los valores temporales
     }//GEN-LAST:event_ACActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        calculatorButtons.changeMode();
+        background.changeMode();
+        settingMode();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
+    //setea los colores de la calculadora a darkMode
+    private void settingMode()
+    {   
+        //cambio el color de las letras
+        screen.setForeground(Color.decode(background.getLetter()));
+        screenResult.setForeground(Color.decode(background.getLetterResult()));
+        
+        //cambio el color del fondo
+        jPanel2.setBackground(Color.decode(background.getScreenBackground()));
+        jPanel1.setBackground(Color.decode(background.getButtonsBackground()));
+        
+        //cambio los botones numericos
+        settingButtonImage(cero, calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(dot,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(DEL,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(one,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(two,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(three,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(four,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(five,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(six,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(seven,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(eight,calculatorButtons.getNumberButton().getButton());
+        settingButtonImage(nine,calculatorButtons.getNumberButton().getButton());
+        
+        //cambio el boton igual
+        settingButtonImage(equal, calculatorButtons.getEqualButton().getButton());
+        
+        //cambio los botones de operaciones
+        settingButtonImage(AC, calculatorButtons.getOperationButton().getButton());
+        settingButtonImage(pi, calculatorButtons.getOperationButton().getButton());
+        settingButtonImage(multiply, calculatorButtons.getOperationButton().getButton());
+        settingButtonImage(divide, calculatorButtons.getOperationButton().getButton());
+        settingButtonImage(substract, calculatorButtons.getOperationButton().getButton());
+        settingButtonImage(add, calculatorButtons.getOperationButton().getButton());
+    }
+    
+    //setea en darkMode los botones
+    private void settingButtonImage(JButton boton, ButtonImage imagenBoton)
+    {
+        String icon = imagenBoton.getIcon();
+        String pressedIcon = imagenBoton.getPressedIcon();
+        String rolloverIcon = imagenBoton.getRolloverIcon();
+        String foreground = imagenBoton.getForeground();
+        
+        boton.setIcon(new ImageIcon(getClass().getResource(icon)));
+        boton.setPressedIcon(new ImageIcon(getClass().getResource(pressedIcon)));
+        boton.setRolloverIcon(new ImageIcon(getClass().getResource(rolloverIcon)));
+        boton.setForeground(Color.decode(foreground));
+    }
     
     private void addOperation()
     {
@@ -684,8 +789,8 @@ public class Calculadora extends javax.swing.JFrame
         }
         else
         {
-            this.screenResult.setText("");//si hay un error reinicio la pantalla de arriba
-            this.screen.setText(num1);//reinicio la pantalla de abajo con el mensaje de error
+            this.screen.setText(" ");//si hay un error reinicio la pantalla de arriba
+            this.screenResult.setText(num1);//reinicio la pantalla de abajo con el mensaje de error
             calculadora.resetAtributs();//reseteo los valores de la calculadora
             resetValues();//reseteo los valores temporales
         }
@@ -728,6 +833,14 @@ public class Calculadora extends javax.swing.JFrame
         
     }
     
+    public static void updateButtons()
+    {
+        ButtonImage number = calculatorButtons.getNumberButton().getButton();
+        ButtonImage equal = calculatorButtons.getEqualButton().getButton();
+        ButtonImage operation = calculatorButtons.getOperationButton().getButton();
+        
+    }
+    
     //--------------------------------------------------------------------------------------------------------------
     //redondear resultados a 5 numeros despues de la coma en pantalla
     //hacer un try catch en la division y tirar el error de no se puede dividir
@@ -751,8 +864,20 @@ public class Calculadora extends javax.swing.JFrame
     //booleano para saber si el numero pi se apreto, porque si pi esta
     //en la pantalla no tendria que poder agregarle numeros a pi
     public static boolean numberPi;
+    
+    //caracteristicas visuales de los botones
+    public static CalculatorButtons calculatorButtons;
+    //caracteristicas visuales del fondo
+    public static CalculatorBackground background;
+    
     public static void main(String args[]) 
     {
+        calculatorButtons = new CalculatorButtons();//inicializo la info visual de los botones
+        background = new CalculatorBackground();//inicializo la info visual del fondo
+        
+        //actualizo los botones de la calculadora ///-----------------------------------------------------**
+        updateButtons();
+        
         calculadora = new Calculator();//inicializo la calculadora
         num1 = "";//numero 1 se inicializa vacio
         num2 = "";//numero 2 se inicializa vacio
@@ -802,6 +927,7 @@ public class Calculadora extends javax.swing.JFrame
     private javax.swing.JButton equal;
     private javax.swing.JButton five;
     private javax.swing.JButton four;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton multiply;
