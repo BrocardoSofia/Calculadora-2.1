@@ -60,7 +60,7 @@ public class Calculadora extends javax.swing.JFrame
         jPanel2 = new javax.swing.JPanel();
         screenResult = new javax.swing.JLabel();
         screen = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        changeMode = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -487,9 +487,15 @@ public class Calculadora extends javax.swing.JFrame
         screen.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         screen.setText("30");
 
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        changeMode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modeLight.png"))); // NOI18N
+        changeMode.setBorderPainted(false);
+        changeMode.setContentAreaFilled(false);
+        changeMode.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        changeMode.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modeDark.png"))); // NOI18N
+        changeMode.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modeChangeLight.png"))); // NOI18N
+        changeMode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                changeModeActionPerformed(evt);
             }
         });
 
@@ -505,14 +511,14 @@ public class Calculadora extends javax.swing.JFrame
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(changeMode, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(changeMode, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(screenResult, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -699,18 +705,18 @@ public class Calculadora extends javax.swing.JFrame
 
     private void ACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACActionPerformed
         // TODO add your handling code here:
-        this.screen.setText(""); //borro todo en la pantalla de abajo
-        this.screenResult.setText(""); //borro todo en la pantalla de arriba
+        this.screen.setText(" "); //borro todo en la pantalla de abajo
+        this.screenResult.setText(" "); //borro todo en la pantalla de arriba
         calculadora.resetAtributs(); //reseteo la calculadora
         resetValues(); //reseteo los valores temporales
     }//GEN-LAST:event_ACActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void changeModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeModeActionPerformed
         
         calculatorButtons.changeMode();
         background.changeMode();
         settingMode();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_changeModeActionPerformed
     
     //setea los colores de la calculadora a darkMode
     private void settingMode()
@@ -722,6 +728,9 @@ public class Calculadora extends javax.swing.JFrame
         //cambio el color del fondo
         jPanel2.setBackground(Color.decode(background.getScreenBackground()));
         jPanel1.setBackground(Color.decode(background.getButtonsBackground()));
+        
+        //cambio el boton de cambio de modo
+        settingButtonImage(changeMode, calculatorButtons.getChangeMode().getButton());
         
         //cambio los botones numericos
         settingButtonImage(cero, calculatorButtons.getNumberButton().getButton());
@@ -921,13 +930,13 @@ public class Calculadora extends javax.swing.JFrame
     private javax.swing.JButton DEL;
     private javax.swing.JButton add;
     private javax.swing.JButton cero;
+    private javax.swing.JButton changeMode;
     private javax.swing.JButton divide;
     private javax.swing.JButton dot;
     private javax.swing.JButton eight;
     private javax.swing.JButton equal;
     private javax.swing.JButton five;
     private javax.swing.JButton four;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton multiply;

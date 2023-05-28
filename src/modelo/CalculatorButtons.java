@@ -14,6 +14,7 @@ public class CalculatorButtons
     private Button numberButton;
     private Button equalButton;
     private Button operationButton;
+    private Button changeMode;
     
     //---------------------------------------------------------------------------------- METODOS
     public CalculatorButtons()
@@ -30,6 +31,10 @@ public class CalculatorButtons
                                      "/imagenes/boton3MouseDark.png", "#daedc6",
                                      "/imagenes/boton3.png","/imagenes/boton3.png",
                                      "/imagenes/boton3Mouse.png", "#101103");
+        changeMode = makeButton("/imagenes/modeDark.png","/imagenes/modeLight.png",
+                                "/imagenes/modeChangeDark.png", "#c3c3c3",
+                                "/imagenes/modeLight.png","/imagenes/modeDark.png",
+                                "/imagenes/modeChangeLight.png", "#c3c3c3");
     }
     
     private Button makeButton(String iconDark, String pressedIconDark, String rolloverIconDark, String foregroundDark,
@@ -58,11 +63,17 @@ public class CalculatorButtons
         return operationButton;
     }
     
+    public Button getChangeMode()
+    {
+        return changeMode;
+    }
+    
     public void changeMode()
     {
         numberButton.changeMode();
         operationButton.changeMode();
         equalButton.changeMode();
+        changeMode.changeMode();
     }
     
    
